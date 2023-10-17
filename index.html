@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rectangular Step Screen</title>
+    <title>Rectangular Step Screen Calculator</title>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
@@ -25,12 +25,12 @@
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <img src="amityLogo.jpeg" alt="AmityLogo" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-20 h-20 text-white p-2 bg-white rounded-full" viewBox="0 0 24 24">
+            <img src="/amityLogo.jpeg" alt="AmityLogo" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-20 h-20 text-white p-2 bg-white rounded-full" viewBox="0 0 24 24">
             <span class="ml-3 text-xl">Rectangular Step Screen</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900">About</a>
-            <a class="mr-5 hover:text-gray-900">Calculation</a>
+            <!-- <a class="mr-5 hover:text-gray-900" href="#">About</a> -->
+            <!-- <a class="mr-5 hover:text-gray-900">Calculation</a> -->
             <!-- <a class="mr-5 hover:text-gray-900">Third Link</a>
             <a class="mr-5 hover:text-gray-900">Fourth Link</a> -->
           </nav>
@@ -56,7 +56,7 @@
     <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-            <img class="object-cover object-center rounded" alt="hero" src="./chamberDiag.jpeg">
+            <img class="object-cover object-center rounded" alt="hero" src="/chamberDiag.jpeg">
           </div>
           <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">RECTANGULAR STEP SCREEN</h1>
@@ -92,7 +92,7 @@
         <div class="container px-5 py-24 mx-auto flex flex-col">
           <div class="lg:w-4/6 mx-auto">
             <div class="rounded-lg h-64 overflow-hidden">
-              <img alt="content" class="object-cover object-center h-full w-full" src="./images/kibaImage.jpeg">
+              <img alt="content" class="object-cover object-center h-full w-full" src="/kibaImage.jpeg">
             </div>
             <div class="flex flex-col sm:flex-row mt-10">
               <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
@@ -138,7 +138,7 @@
                 <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/501x301">
               </div> --> 
               <div class="md:p-2 p-1 w-full">
-                <img alt="gallery" class="w-full h-full object-cover object-center block" src="./contants2.jpeg">
+                <img alt="gallery" class="w-full h-full object-cover object-center block" src="/contants2.jpeg">
               </div>
             </div>
             <div class="flex flex-wrap w-1/2">
@@ -146,7 +146,7 @@
                 <img alt="gallery" class="w-full h-full object-cover object-center block" src="./images/parameters2.jpeg">
               </div> -->
               <div class="rounded-lg h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src="./parameters2.jpeg">
+                <img alt="content" class="object-cover object-center h-full w-full" src="/parameters2.jpeg">
               </div>
               <!-- <div class="md:p-2 p-1 w-1/2">
                 <img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/502x302">
@@ -254,88 +254,7 @@
         <p id="totVolScr"></p>
     </div>
     
-    
-
-    <script>
-        const calculate = () => {   //fat arrow function
-            //importing the inputs >>
-            //flowCal
-            const u = parseFloat(document.getElementById('u').value);
-            const pf = parseFloat(document.getElementById('pf').value);
-            //const x = document.getElementById('x').value;
-            const e = parseFloat(document.getElementById('e').value);
-            const h = parseFloat(document.getElementById('h').value);
-            const i = parseFloat(document.getElementById('i').value);
-            const j = parseFloat(document.getElementById('j').value);
-            const n = parseFloat(document.getElementById('n').value);
-            const f = parseFloat(document.getElementById('f').value);
-            const k = parseFloat(document.getElementById('k').value);
-            const p = parseFloat(document.getElementById('p').value);
-
-
-
-            //formulas
-
-            conversion = u*0.0115740; // converts MLD to m3/s input val in MLD
-            xconv = u*pf; // original MLD input multiplied by the peak factor 
-            outputFlow = conversion*pf; //multiplies the converted value with the peak factor entered
-            area = e*f; //area
-            approachVel = outputFlow/area; // approach velocity
-            spacingW = (j/2) + (j/2) + h ; // l in the notes.txt
-            spacingNo = k/spacingW ; // m in the notes.txt spacing number
-            barsNo =  spacingNo + 1; // m1 in notes.txt
-            screenW = k - (barsNo*h); // effective width of the screen
-            inclinedH = Math.round(f/Math.sin(n)); // inclined height (change : rounded)
-            totHScreen = 1 + f + p; // total height of the screen (change: f + p)
-            effectiveSA = inclinedH*screenW; // effective screen area
-            velocityScreen = outputFlow / (screenW*inclinedH);  //velocity through the screen
-            lenOccIncli = totHScreen / Math.tan(n); //length of the screen occupied by inclination in radians
-            upstreamL = 1.1*e;
-            downstreamL = 0.7*e;
-            totLChamber = lenOccIncli + upstreamL + downstreamL; //total length of the chamber
-            // totLChamberR = Math.round(totLChamber); //total length of the chamber rounded 
-            headerCleanS = [(velocityScreen*velocityScreen) - (approachVel*approachVel)]/[2*9.81*0.7]; //head loss through the  clean screen
-            velCloggedScr = velocityScreen/0.5; //velocity through clogged screen
-            screenClogC = [(velCloggedScr*velCloggedScr) - (approachVel*approachVel)]/[2*9.81*0.6]  //screen at clogging condition 
-            volScreening = (67*xconv*1000000)/1000000; //volume of screening in L
-            totVolScr = volScreening/1000; //total volume of screen
-
-
-            //HTML editing part
-            
-            // document.getElementById('conversion').innerHTML = `Value in ${conversion} cubic meter per second`;
-            document.getElementById('outputFlow').innerHTML = `Flow = ${outputFlow} cubic meter per second`;
-            document.getElementById('area').innerHTML = `The area = ${area} sq. meter`;
-            document.getElementById('approachVel').innerHTML = `Approach Velocity = ${approachVel} m/s`;
-            document.getElementById('spacingW').innerHTML = `Effective one spacing width = ${spacingW} m`;
-            document.getElementById('spacingNo').innerHTML = `Number of spacing = ${spacingNo} `;
-            document.getElementById('barsNo').innerHTML = `Number of bars = ${barsNo} `;
-            document.getElementById('screenW').innerHTML = `Effective width of the screen = ${screenW} m `;
-            document.getElementById('inclinedH').innerHTML = `Inclined height = ${inclinedH} m `;
-            document.getElementById('totHScreen').innerHTML = `Total height of the screen = ${totHScreen} m `;
-            document.getElementById('effectiveSA').innerHTML = `Effective screen area = ${effectiveSA} sq. m`;
-            document.getElementById('velocityScreen').innerHTML = `Velocity through the screen = ${velocityScreen} m/s `;
-            document.getElementById('lenOccIncli').innerHTML = `Length of the screen occupied by inclination = ${lenOccIncli} m `;
-            document.getElementById('upstreamL').innerHTML = `Upstream length = ${upstreamL} m `;
-            document.getElementById('downstreamL').innerHTML = `Downstream length = ${downstreamL} m `;
-            document.getElementById('totLChamber').innerHTML = `Total length of the chamber = ${totLChamber} m `;
-            // document.getElementById('totLChamberR').innerHTML = `total length of the chamber (rounded) ${totLChamberR} `;
-            document.getElementById('headerCleanS').innerHTML = `Head loss through clean screen = ${headerCleanS} m `;
-            document.getElementById('velCloggedScr').innerHTML = `Velocity through clogged condition = ${velCloggedScr} m/s `;
-            document.getElementById('screenClogC').innerHTML = `Headloss at clogged condition = ${screenClogC} m `;
-            document.getElementById('volScreening').innerHTML = `Volume of screening = ${volScreening} cubic metre `;
-            document.getElementById('totVolScr').innerHTML = `total volume of screen = ${totVolScr} cubic metre `;
-
-
-
-        }
-
-        document.getElementById('calFlow').addEventListener('click', calculate);
-        document.getElementById('calDim').addEventListener('click', calculate);
-
-
-
-    </script>
+    <script src="script.js"></script>
 
 
 </body>
