@@ -1,0 +1,82 @@
+Preliminary Input >> 
+
+flow = x (in  MLD) < 
+flow = n1 (in m3/s) 
+
+peak factor = 2
+
+flow = n1*2; >
+
+input dimensions >> 
+
+width of channel = e
+width of bar = h
+thickness of bar = i
+spacing between bars = j
+angle of inclination = n
+
+liquid depth of screen = f
+width inside the screen = k
+
+
+freeboard card = p : 
+
+
+output >> 
+area = e*f = g
+approach velocity = y/g = v 
+Effective one spacing width = j/2 + j/2 + h = l
+No of spacing = k/l = m
+No of bars = m+1 = m1
+Effective width of screen = k-(m1 * h) << done till here
+
+
+
+
+
+ 
+inclined height = f/sin n
+total height of the screen = platform screening (1) + e + f
+effective screen area = inclined height *   effective width of the screen (screenW)
+
+
+velocity through the screen = z (flow = x) /screenW * inclined height 
+length of the screen occupied by inclination = total height of the screen / tan(n)
+upstream length = 1.1 * e 
+downstream length = 0.7 * e
+Total length of chamber (required)= length of the screen occupied by inclination + upstream length + downstream length
+total length provided = round off required 
+
+
+headers through clean screen = velocity through the screen * velocity through the screen - approachVel * approachVel / 2 * 9.81 * 0.7
+
+
+velocity through clogged screen = velocity through the screen / 0.5
+
+
+screen at clogging condition = velocity through the screen * velocity through the screen - approachVel * approachVel / 2 * 9.81 * 0.6
+volume of screening = 67 * angle of inclination (n) * 1000000 / 1000000 (L unit)
+total volume of screens = total height of screen / 1000
+
+
+
+------------------------------------------------
+
+inputs >> 
+h3 >> Dimensional input
+flow in MLD to m3/s = 0.0115740 
+peak factor = assign a variable 
+
+
+flow in MLD = 200 MLD = u
+flow in m3/s = u*0.0115740 = x
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerated Grit Chamber</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    <section id="header">
+        <h3>Arnold's Grit Chamber</h3>
+        <div>
+            <ul id="navbar">
+                <li><a href="#" class="active">About</a></li>
+                <li><a href="#" class="active">Calculator</a></li>
+                <!-- <li><a href="#" class="active"></a></li> -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="hero">
+        <h4>Civil Engineering</h4>
+        <h2>Grit Calculation made easy</h2>
+        <h1>Arnold's Grit Calculator</h1>
+        <button>Calculate</button>
+    </section>
+
+
+    
+    <!-- <h1>Welcome to Arnold's Aerated Grit Chamber</h1>
+    <p>The one stop solution for the calculation of the grit and everything that you need.</p> -->
+    <br><br><br><br><br>
+    <label for="x">Height of the chamber (in m) </label>
+    <input type="text" id="h">
+
+    <label for="x">Length of the chamber (in m) </label>
+    <input type="text" id="l">
+
+    <label for="y">Width of the chamber (in m) </label>
+    <input type="text" id="b">
+    <label for="vol">The volume of the chamber </label>
+    <br><br>
+    <!-- input Division (not styled yet) -->
+
+    <h3>Enter the following details to ge started</h3>
+    <label for="inputflow">Flow (in m3/s)</label>
+    <input type="text" id="x">
+    <p>NOTE : Peak Factor = 2</p>
+    <button id="cal1">CALCULATE FLOW</button>
+    <p id="outputFlow"></p>
+
+
+    <button id="cal">CALCULATE</button>
+    <!-- <input type="button" id="cal"> -->
+    <p>The flow of the chamber is : </p>
+    <p id="result"></p>
+
+
+    <script>
+        const calculate = () => {
+            const h = document.getElementById('h').value;
+            const l = document.getElementById('l').value;
+            const b = document.getElementById('b').value;
+            //the actual values >>
+            const x = document.getElementById('x').value;
+
+            outputFlow = x*2;
+
+
+            result = l*b*h;
+            document.getElementById('result').innerHTML = `${result} cubic meter`;
+            document.getElementById('outputFlow').innerHTML = `${outputFlow} cubic meter per second`;
+        }
+
+        document.getElementById('cal').addEventListener('click', calculate);
+        document.getElementById('cal').addEventListener('click', calculate);
+
+
+    </script>
+
+
+</body>
+</html>
